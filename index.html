@@ -1,0 +1,162 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body onload="PageLoaded()">
+    <nav>
+      <h1>Wordle</h1>  
+    </nav>
+    <button onclick="StartWordle()">Start new Wordle</button>
+    <div id="WorldeContainer">
+        <div class="row" length="5" word="" id="row_1">
+            <div class="block" id="1_1">
+                <h3></h3>
+            </div>
+            <div class="block" id="1_2">
+                <h3></h3>
+            </div>
+            <div class="block" id="1_3">
+                <h3></h3>
+            </div>
+            <div class="block" id="1_4">
+                <h3></h3>
+            </div>
+            <div class="block" id="1_5">
+                <h3></h3>
+            </div>
+        </div>
+        <div class="row" length="5" word="" id="row_2">
+            <div class="block" id="2_1">
+                <h3></h3>
+            </div>
+            <div class="block" id="2_2">
+                <h3></h3>
+            </div>
+            <div class="block" id="2_3">
+                <h3></h3>
+            </div>
+            <div class="block" id="2_4">
+                <h3></h3>
+            </div>
+            <div class="block" id="2_5">
+                <h3></h3>
+            </div>
+        </div>
+        <div class="row" length="5" word="" id="row_3">
+            <div class="block" id="3_1">
+                <h3></h3>
+            </div>
+            <div class="block" id="3_2">
+                <h3></h3>
+            </div>
+            <div class="block" id="3_3">
+                <h3></h3>
+            </div>
+            <div class="block" id="3_4">
+                <h3></h3>
+            </div>
+            <div class="block" id="3_5">
+                <h3></h3>
+            </div>
+        </div>
+        <div class="row" length="5" word="" id="row_4">
+            <div class="block" id="4_1">
+                <h3></h3>
+            </div>
+            <div class="block" id="4_2">
+                <h3></h3>
+            </div>
+            <div class="block" id="4_3">
+                <h3></h3>
+            </div>
+            <div class="block" id="4_4">
+                <h3></h3>
+            </div>
+            <div class="block" id="4_5">
+                <h3></h3>
+            </div>
+        </div>
+        <div class="row" length="5" word="" id="row_5">
+            <div class="block" id="5_1">
+                <h3></h3>
+            </div>
+            <div class="block" id="5_2">
+                <h3></h3>
+            </div>
+            <div class="block" id="5_3">
+                <h3></h3>
+            </div>
+            <div class="block" id="5_4">
+                <h3></h3>
+            </div>
+            <div class="block" id="5_5">
+                <h3></h3>
+            </div>
+        </div>
+        <div class="row" length="5" word="" id="row_6">
+            <div class="block" id="6_1">
+                <h3></h3>
+            </div>
+            <div class="block" id="6_2">
+                <h3></h3>
+            </div>
+            <div class="block" id="6_3">
+                <h3></h3>
+            </div>
+            <div class="block" id="6_4">
+                <h3></h3>
+            </div>
+            <div class="block" id="6_5">
+                <h3></h3>
+            </div>
+        </div>
+    </div>
+    <div id="keyboardcontainer">
+        <div id="section1" class="keyboardsection">
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">q</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">w</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">e</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">r</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">t</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">y</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">u</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">i</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">o</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">p</h4>
+            <h4 class="keyboardblock" id="Backspace"  onclick="KeyPress(id)"><-</h4>
+        </div>
+        <div id="section2" class="keyboardsection">
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">a</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">s</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">d</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">f</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">g</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">h</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">k</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">l</h4>
+            <h4 class="keyboardblock" id="Enter" onclick="KeyPress(id)">Enter</h4>
+        </div>
+        <div id="section2" class="keyboardsection">
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">z</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">x</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">c</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">v</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">b</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">n</h4>
+            <h4 class="keyboardblock" onclick="KeyPress(innerHTML)">m</h4>
+        </div>
+    </div>
+    <div id="youwin">
+        <h1>You won!</h1>
+        <p>You're so good at this woowowowoowowo  :OOO:oo</p>
+        <p>Want to play again? or maybe share?? PRESS THE BUTTONN  NOWW</p>
+        <button onclick="StartWordle()">Start new Wordle</button>
+        <button onclick="Share()">Copy results to clipboard.</button>
+    </div>
+</body>
+</html>
